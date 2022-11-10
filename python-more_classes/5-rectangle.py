@@ -52,7 +52,7 @@ class Rectangle:
             return 0
         else:
             return 2 * (self.__height + self.__width)
-    
+
     def __del__(self):
         '''
         Detects the deletion of an instance
