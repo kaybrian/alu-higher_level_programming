@@ -7,4 +7,4 @@
 - [Class and Instance Attributes](https://alu-intranet.hbtn.io/rltoken/2Lv-3qPSpQfC1VI52d9LZA)
 - [classmethods and staticmethods](https://alu-intranet.hbtn.io/rltoken/18KAvV_Ife9t5o3HYXj9DQ)
 - [Properties vs. Getters and Setters](https://alu-intranet.hbtn.io/rltoken/uHYbs5bXkYo6KvTtT6K5Sg) (Mainly the last part “Public instead of Private Attributes”)
-- [str vs repr](https://alu-intranet.hbtn.io/rltoken/I0LZ2eMDlX6Fc-vrJvY5fA)
+- [str vs repr](https://alu-intranet.hbtn.io/rltoken/I0LZ2eMDlX6Fc-vrJvY5fAs)
