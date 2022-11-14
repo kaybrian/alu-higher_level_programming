@@ -16,7 +16,7 @@ All your answers should be only one line in a file. No space before or after the
 ### Resources
 Read or watch:
 
--[ 9.10. Objects and values](https://alu-intranet.hbtn.io/rltoken/vu0q2rKj3XKGyDoqvx72sA)
+- [ 9.10. Objects and values](https://alu-intranet.hbtn.io/rltoken/vu0q2rKj3XKGyDoqvx72sA)
 - [9.11. Aliasing](https://alu-intranet.hbtn.io/rltoken/MOP1Saf_C2E_eHxKnZggHw)
 - [Immutable vs mutable types](https://alu-intranet.hbtn.io/rltoken/vvV3pDEliqja6aAI7XFNiA)
 - [Mutation (Only this chapter)](https://alu-intranet.hbtn.io/rltoken/xyElfrO9KowD4p5UqhQG8A)
