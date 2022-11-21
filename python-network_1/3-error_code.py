@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""displays the body of the response"""
+"""Contect"""
 
 import urllib.request
 import urllib.error
 import sys
 
 if __name__ == "__main__":
-    """module to display content"""
+    """content"""
     url = sys.argv[1]
     req = urllib.request.Request(url)
     try:
