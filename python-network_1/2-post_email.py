@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-'''send emails on a url'''
+"""send emails on a url"""
+
 
 import urllib.request
 import urllib.parse
