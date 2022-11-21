@@ -6,7 +6,7 @@ import urllib.request
 
 
 if __name__ == '__main__':
-    res = urllib.request.Request("https://alu-intranet.hbtn.io/status")
+    res = "https://alu-intranet.hbtn.io/status"
     with urllib.request.urlopen(res) as resp:
         data = resp.read()
         print("Body response:")
