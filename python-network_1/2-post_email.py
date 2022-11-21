@@ -7,7 +7,7 @@ import sys
 
 
 if __name__ == '__main__':
-    """"Documented"""
+    """Documented"""
     url = sys.argv[1]
     message = {
         "email": sys.argv[2]
