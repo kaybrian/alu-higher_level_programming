@@ -1,19 +1,17 @@
 #!/usr/bin/python3
-"""send emails on a url"""
-
+"""I documented you"""
 
 import urllib.request
 import urllib.parse
 import sys
 
 if __name__ == '__main__':
-    """Documented"""
+    """"Documented"""
     url = sys.argv[1]
-    message = {
-        "email": sys.argv[2]
-    }
+    message = {"email": sys.argv[2]}
     data = urllib.parse.urlencode(message)
-    data = data.encode('ascii')
-    with urllib.request.urlopen(url) as response:
-        cont = response.read()
-        print(f"{cont.decode('utf-8')}")
+    data = data.encode('ascii') 
+    req = urllib.request.Request(url, data)
+    with urllib.request.urlopen(req) as response:
+        content = response.read()
+        print("{}".format(content.decode("utf-8")))
