@@ -1,10 +1,12 @@
 #!/bin/bash
-git add .
+
 
 if [ "$#" -eq 2 ];then
     chmod u+x "$2"
+    git add .
     git commit -m "$1"
 else 
+    git add .
     git commit -m "$1"
 fi
 
