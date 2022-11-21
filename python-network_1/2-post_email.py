@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 '''send emails on a url'''
 
-
 import urllib.request
+import urllib.parse
 import sys
-
 
 if __name__ == '__main__':
     """Documented"""
