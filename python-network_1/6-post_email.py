@@ -13,5 +13,5 @@ if __name__ == "__main__":
     context = {
         "email": email
     }
-    response = requests.post(url, data=context())
+    response = requests.post(url, data=context)
     print("{}".format(response.text))
