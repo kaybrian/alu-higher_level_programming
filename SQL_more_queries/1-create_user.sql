@@ -1,4 +1,7 @@
---- creates a user for the database 
+-- create use if not there 
+CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
+GRANT ALL ON *.* TO 'user_0d_1'@'localhost';
+FLUSH PRIVILEGES;--- creates a user for the database 
 CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
 GRANT ALL ON *.* TO 'user_0d_1'@'localhost';
 FLUSH PRIVILEGES;
