@@ -8,7 +8,7 @@ def add_integer(a, b=98):
         a : this must be either an integer or float
         b : Must be either an integer or float, and if not provided
             it takes the defualt value of 98
-    Returns: 
+    Returns:
         an integer: the addition of a and b
     '''
     if type(a) == float or type(b) == float:
@@ -20,4 +20,4 @@ def add_integer(a, b=98):
     if type(b) != int:
         raise TypeError("b must be an integer")
 
-    return a +b
+    return a + b
