@@ -3,10 +3,10 @@
 
 
 def add_integer(a, b=98):
-    ''' Function that adds two integers 
+    ''' Function that adds two integers
     Args:
-        a : this must be either an integer or float 
-        b : Must be either an integer or float, and if not provided 
+        a : this must be either an integer or float
+        b : Must be either an integer or float, and if not provided
             it takes the defualt value of 98
     Returns: 
         an integer: the addition of a and b
@@ -19,5 +19,5 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if type(b) != int:
         raise TypeError("b must be an integer")
-    
-    return a +b 
+
+    return a +b
