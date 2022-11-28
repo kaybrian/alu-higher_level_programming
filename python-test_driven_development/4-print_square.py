@@ -19,5 +19,5 @@ def print_square(size):
 
     for i in range(size):
         for j in range(size):
-            print(square_char,end="")
+            print(square_char, end="")
         print()
