@@ -3,6 +3,7 @@
 
 
 def text_indentation(text):
+    '''Fucntion to bring the texts'''
     if type(text) != str:
         raise TypeError("text must be a string")
 
