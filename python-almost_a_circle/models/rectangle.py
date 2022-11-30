@@ -76,3 +76,49 @@ class Rectangle(Base):
             return TypeError("Y should be an integer")
 
         self.__y = y_value
+
+    def area(self):
+        """rectangle area"""
+        return self.width * self.height
+
+    def display(self):
+        """Returns rectangle #"""
+        for i in range(self.y):
+            print()
+        for i in range(self.height):
+            print(' ' * self.x + '#' * self.width)
+
+    def __str__(self):
+        """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        return "[Rectangle] ({}) {}/{} - {}/{}" \
+            .format(self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """assigns an argument"""
+        if len(args) != 0:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except IndexError:
+                pass
+        elif len(kwargs) != 0:
+            self.id = kwargs["id"] if "id" in kwargs else self.id
+            self.width = kwargs["width"] if "width" in kwargs \
+                else self.width
+            self.height = kwargs["height"] if "height" in kwargs \
+                else self.height
+            self.x = kwargs["x"] if "x" in kwargs else self.x
+            self.y = kwargs["y"] if "y" in kwargs else self.y
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
