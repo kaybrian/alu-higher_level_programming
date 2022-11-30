@@ -42,7 +42,7 @@ class Rectangle(Base):
         if height_value < 0:
             return ValueError("Height should be > 0")
 
-        if type(height_value)!= int:
+        if type(height_value) != int:
             return TypeError("Height should be an integer")
 
     @property
@@ -55,8 +55,8 @@ class Rectangle(Base):
         """X coordinate of the rectangle"""
         if x_value < 0:
             return ValueError("X should be > 0")
-        
-        if type(x_value)!= int:
+
+        if type(x_value) != int:
             return TypeError("X should be an integer")
 
         self.__x = x_value
@@ -72,8 +72,7 @@ class Rectangle(Base):
         if y_value < 0:
             return ValueError("Y should be > 0")
 
-        if type(y_value)!= int:
+        if type(y_value) != int:
             return TypeError("Y should be an integer")
 
         self.__y = y_value
-
