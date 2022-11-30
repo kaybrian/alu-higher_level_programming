@@ -31,5 +31,6 @@ class Base:
         if list_objs:
             for i in list_objs:
                 new_list.append(cls.to_dictionary(i))
-            with open(file_name, mode="w") as myFile:
-                myFile.write(cls.to_json_string(new_list))
+
+        with open(file_name, mode="w") as myFile:
+            myFile.write(cls.to_json_string(new_list))
