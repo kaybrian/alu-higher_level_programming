@@ -52,3 +52,18 @@ class Base:
             dummy = cls(3)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Load a list of objects from a file"""
+        try:
+            with open(cls.__name__ + ".json", "r") as file:
+                content = file.read()
+        except FileNotFoundError:
+            return []
+
+        ex_content = cls.from_json_string(content)
+        context_list = []
+        for instance_dict in ex_content:
+            context_list.append(cls.create(**instance_dict))
+        return context_list
