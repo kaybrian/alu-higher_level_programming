@@ -11,22 +11,22 @@ from models.square import Square
 
 class TestBase(TestCase):
     """The Test class for the Base class in models"""
-    def test_starting(self):
+
+    def test_ba(self):
         """Test the starting point of creation of Base"""
         base = Base()
-        first_base = Base()
-        second_base = Base()
-        base_with_39 = Base(39)
+        base_1 = Base()
+        base_89 = Base(89)
         self.assertEqual(base.id, 1)
-        self.assertEqual(first_base.id, 2)
-        self.assertEqual(second_base.id, 3)
-        self.assertEqual(base_with_39.id, 39)
+        self.assertEqual(base_1.id, 2)
+        self.assertEqual(base_89.id, 89)
 
     def test_to_json_string(self):
         """Test the converting of lists to dicts"""
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([{'id': 10}]), '[{"id": 10}]')
         self.assertEqual(type(Base.to_json_string([{'id': 10}])), str)
+        self.assertEqual(Base.to_json_string([]), "[]")
 
     def test_save_to_file(self):
         """Test that the file saves list objects to  file"""
@@ -70,3 +70,4 @@ class TestBase(TestCase):
         self.assertEqual(Base.from_json_string(None), [])
         self.assertEqual(Base.from_json_string('[{"id": 23}]'), [{'id': 23}])
         self.assertEqual(type(Base.from_json_string('[{"id": 23}]')), list)
+        self.assertEqual(Base.from_json_string("[]"), [])

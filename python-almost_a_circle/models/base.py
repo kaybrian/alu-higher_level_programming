@@ -21,6 +21,10 @@ class Base:
         """Convert a list of dictionaries to a JSON string"""
         if list_dictionaries is None:
             return "[]"
+
+        if len(list_dictionaries) == 0:
+            return "[]"
+
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -40,6 +44,10 @@ class Base:
         """Convert a JSON string to a list of dictionaries"""
         if json_string is None:
             return []
+
+        if len(json_string) == 0:
+            return []
+
         list_dicts = json.loads(json_string)
         return list_dicts
 
