@@ -34,3 +34,11 @@ class Base:
 
         with open(file_name, mode="w") as myFile:
             myFile.write(cls.to_json_string(new_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Convert a JSON string to a list of dictionaries"""
+        if json_string is None:
+            return []
+        list_dicts = json.loads(json_string)
+        return list_dicts
