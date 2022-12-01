@@ -42,3 +42,13 @@ class Base:
             return []
         list_dicts = json.loads(json_string)
         return list_dicts
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Create a new object"""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(3, 2)
+        if cls.__name__ == "Square":
+            dummy = cls(3)
+        dummy.update(**dictionary)
+        return dummy
