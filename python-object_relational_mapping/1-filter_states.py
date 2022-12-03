@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     cur = conn.cursor()
 
-    cur.execute("SELECT name FROM states \
+    cur.execute("SELECT * FROM states \
         WHERE name LIKE BINARY 'N%' \
         ORDER BY id ASC")
 
