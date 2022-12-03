@@ -219,5 +219,3 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json") as file:
             self.assertEqual(file.read(), "[]")
             self.assertEqual(type(file.read()), str)        
-
-  
