@@ -13,16 +13,15 @@ if __name__ == "__main__":
         user=sys.argv[1],
         password=sys.argv[2],
         db=sys.argv[3],
-        name=sys.argv[4],
         host="localhost",
         port=3306
     )
     cursor = conn.cursor()
-    command = f"SELECT * FROM states \
+    sql = f"SELECT * FROM states \
         WHERE name LIKE BINARY '{sys.argv[4]}'\
         ORDER BY id ASC"
 
-    cursor.execute(command)
+    cursor.execute(sql)
     data = cursor.fetchall()
 
     for row in data:
