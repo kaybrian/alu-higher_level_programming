@@ -17,11 +17,13 @@ if __name__ == "__main__":
         port=3306
     )
     cursor = conn.cursor()
-    cursor.execute("SELECT cities.id, cities.name, state.name\
-                    FROM states, cities\
-                    WHERE cities.state_id = states.id\
-                    ORDER BY cities.id ASC")
 
+    sql = """SELECT c.id, c.name, s.name
+          FROM states s, cities c
+          WHERE c.state_id = s.id
+          ORDER BY c.id ASC"""
+
+    cursor.execute(sql)
     cities = cursor.fetchall()
 
     for city in cities:
