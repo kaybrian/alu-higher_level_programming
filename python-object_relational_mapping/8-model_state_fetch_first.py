@@ -14,16 +14,20 @@ if __name__ == "__main__":
                         sys.argv[1], sys.argv[2], sys.argv[3]),
                         pool_pre_ping=True
                     )
+
     Session = sessionmaker(bind=engine)
     Base.metadata.create_all(engine)
 
+    # create a session
     session = Session()
 
-    state = session.query(State).order_by(State.id).first()
+    # extract first state
+    states = session.query(State).order_by(State.id).first()
 
-    if state is None:
+    # print state
+    if states is None:
         print("Nothing")
     else:
-        print(f"{state.id}: {state.name}")
+        print("{}: {}".format(states.id, states.name))
 
     session.close()
