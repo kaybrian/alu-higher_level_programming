@@ -15,16 +15,11 @@ if __name__ == "__main__":
                         pool_pre_ping=True
                     )
     Session = sessionmaker(bind=engine)
-
-    Base.metadata.create_all(engine)
-
     session = Session(engine)
 
     record = session.query(State).first()
 
-    if record:
-        print("{}: {}".format(record.__dict__['id'], record.__dict__['name']))
-    else:
-        print("Nothing")
+    print("{}: {}".format(record.__dict__['id'], record.__dict__['name'])) \
+        if record else print("Nothing")
 
     session.close()
