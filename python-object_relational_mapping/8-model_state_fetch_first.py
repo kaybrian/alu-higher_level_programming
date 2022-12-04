@@ -16,7 +16,9 @@ if __name__ == "__main__":
 
     record = session.query(State).first()
 
-    print("{}: {}".format(record.__dict__['id'], record.__dict__['name'])) \
-        if record else print("Nothing")
+    if record:
+        print("{}: {}".format(record.__dict__['id'], record.__dict__['name']))
+    else:
+        print("Nothing")
 
     session.close()
