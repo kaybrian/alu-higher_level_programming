@@ -2,7 +2,7 @@
 """A base class"""
 
 import json
-import csv
+import turtle
 
 
 class Base:
@@ -79,21 +79,45 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Serializes a list of objects in CSV format."""
-        with open(cls.__name__ + ".csv", mode="w") as f:
-            writer = csv.writer(f)
-            for obj in list_objs:
-                writer.writerow(obj.to_dictionary())
+        """ Save to a CSV file """
+        with open(f"{cls.__name__}.csv", "w") as file:
+            if list_objs:
+                for obj in list_objs:
+                    obj = obj.to_dictionary()
+                    file.write(
+                        ",".join(str(obj[key]) for key in cls.HEADERS) + "\n"
+                    )
 
     @classmethod
     def load_from_file_csv(cls):
-        """Deserializes a list of objects from a CSV file."""
+        """ Load from a CSV file """
         try:
-            with open(cls.__name__ + ".csv", mode="r") as f:
-                reader = csv.reader(f)
-                objects = []
-                for row in reader:
-                    objects.append(cls.create(**dict(row)))
-            return objects
+            with open(f"{cls.__name__}.csv", "r") as file:
+                return [cls.create(
+                    **{k: int(v) for k, v in zip(cls.HEADERS, line.split(","))}
+                ) for line in file.readlines()]
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ Draw the rectangles and squares """
+        shapes = []
+        if list_rectangles:
+            shapes.extend(list_rectangles)
+        if list_squares:
+            shapes.extend(list_squares)
+        pen = turtle.Turtle()
+        pen.pen(pencolor='black', pendown=False, pensize=2, shown=False)
+        for shape in shapes:
+            pen.penup()
+            pen.setpos(shape.x, shape.y)
+            pen.pendown()
+            pen.forward(shape.width)
+            pen.right(90)
+            pen.forward(shape.height)
+            pen.right(90)
+            pen.forward(shape.width)
+            pen.right(90)
+            pen.forward(shape.height)
+            pen.right(90)
