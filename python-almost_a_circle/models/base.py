@@ -2,6 +2,7 @@
 """A base class"""
 
 import json
+import csv
 
 
 class Base:
@@ -75,3 +76,24 @@ class Base:
         for instance_dict in ex_content:
             context_list.append(cls.create(**instance_dict))
         return context_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes a list of objects in CSV format."""
+        with open(cls.__name__ + ".csv", mode="w") as f:
+            writer = csv.writer(f)
+            for obj in list_objs:
+                writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes a list of objects from a CSV file."""
+        try:
+            with open(cls.__name__ + ".csv", mode="r") as f:
+                reader = csv.reader(f)
+                objects = []
+                for row in reader:
+                    objects.append(cls.create(**dict(row)))
+            return objects
+        except FileNotFoundError:
+            return []
