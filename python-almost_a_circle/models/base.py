@@ -3,6 +3,7 @@
 
 import json
 import turtle
+import csv
 
 
 class Base:
@@ -80,17 +81,36 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """ Save to a CSV file """
-        with open(f"{cls.__name__}.csv", "w") as file:
-            pass
-        
+        fn = cls.__name__ + ".csv"
+        if fn == "Rectangle.csv":
+            fields = ["id", "width", "height", "x", "y"]
+        else:
+            fields = ["id", "size", "x", "y"]
+        with open(fn, mode="w", newline="") as myFile:
+            if list_objs is None:
+                writer = csv.writer(myFile)
+                writer.writerow([[]])
+            else:
+                writer = csv.DictWriter(myFile, fieldnames=fields)
+                writer.writeheader()
+                for x in list_objs:
+                    writer.writerow(x.to_dictionary())
+
     @classmethod
     def load_from_file_csv(cls):
         """ Load from a CSV file """
         try:
-            with open(f"{cls.__name__}.csv", "r") as file:
-               pass
+            fn = cls.__name__ + ".csv"
+            with open(fn, newline="") as myFile:
+                reader = csv.DictReader(myFile)
+                lst = []
+                for x in reader:
+                    for i, n in x.items():
+                        x[i] = int(n)
+                    lst.append(x)
+                return ([cls.create(**objt) for objt in lst])
         except FileNotFoundError:
-            return []
+            return ([])
 
     @staticmethod
     def draw(list_rectangles, list_squares):
