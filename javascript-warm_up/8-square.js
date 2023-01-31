@@ -3,7 +3,7 @@
 const args = process.argv.slice(2);
 
 const number = parseInt(args[0]);
-let square = '';
+let square;
 
 if (number === undefined) {
   console.log('Missing size');
