@@ -12,7 +12,9 @@ if (number === undefined) {
     for (let j = 0; j < number; j++) {
       square += 'x';
     }
-    square += '\n';
+    if (i !== number) {
+      square += '\n';
+    }
   }
   console.log(square);
 }
