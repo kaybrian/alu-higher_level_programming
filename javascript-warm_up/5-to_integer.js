@@ -11,7 +11,7 @@ if (number === undefined) {
     console.log('Not a number');
   } else {
     if (typeof (number) === 'number') {
-      console.log('My number: ' + number)
+      console.log('My number: ' + number);
     }
   }
 }
