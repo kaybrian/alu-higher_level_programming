@@ -8,6 +8,6 @@ request.get(`https://swapi-api.alx-tools.com/api/films/${id}`, function (err, re
   if (err) {
     console.log(err);
   } else {
-    console.log('code: ' + statusCode);
+    console.log(JSON.parse(res.body).title);
   }
 });
