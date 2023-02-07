@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
 const request = require('request');
-const url = 'https://jsonplaceholder.typicode.com/todos';
-const result = {}
-let count = 1
+const url = process.argv[2];
+const result = {};
+let count = 1;
 request.get(url, function (err, res) {
   if (err) {
     console.log(err);
@@ -11,11 +11,11 @@ request.get(url, function (err, res) {
     const data = JSON.parse(res.body);
 
     data.forEach(element => {
-      if (element.completed === true){
+      if (element.completed === true) {
         result[count] = element.id;
-        count ++;
+        count++;
       }
     });
   }
-  console.log(result)
+  console.log(result);
 });
